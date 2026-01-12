@@ -539,7 +539,7 @@ maxStrana=$(".strane>p:last-of-type").text();
 function strana(){
     idTorte=$(".idTorte").attr("id");
 
-    // $(".slikeWrap .slike").remove();
+    $(".slikeWrap .slike").remove();
     $(".slikeWrap").append(`<div class="slike"></div>`)
 
     let i=1;
