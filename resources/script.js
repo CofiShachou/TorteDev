@@ -69,7 +69,9 @@ $("body").prepend(`<header id="header">
     </header>`)  
      
         
-if (window.matchMedia("(max-width: 576px)").matches) {
+     
+        
+if ($("#click").css("display") === "none") {
     console.log("bla");
 
     $("#torte").children("a, i").wrapAll("<div></div>");
@@ -92,16 +94,13 @@ if (window.matchMedia("(max-width: 576px)").matches) {
 
     let toggle = false;
 
-function setupMobileMenu() {
-    document.getElementById("click").remove();
-    $("#nav").append(`<i class="fa-solid fa-list-ul" id="click"></i>`)
-    
-    
+// function setupMobileMenu() {
+    // document.getElementById("click").remove();
+    // $("#nav").append(`<i class="fa-solid fa-list-ul" id="click"></i>`)
     const $menu = $("#header > ul");
-
-    // Ovako delegiraš klik na #click
-    $(document).off("click", "#click"); // prvo ukloni stari handler
-    $(document).on("click", "#click", function() {
+    $("#click").click( function() {
+        console.log("DSADWA");
+        
         if(!toggle){
         // $("#header").css("height","90vw")
        $menu.css({
@@ -262,18 +261,16 @@ $("#ponuda").click(()=>{
         ponudaToggle=false
     }
 })
-}
-    // Pokreni prvi put
-setupMobileMenu();
+// }
+// setupMobileMenu();
+// let resizeTimer
+// $(window).on("resize", function() {
+//         clearTimeout(resizeTimer);
 
-// I pokreni pri resize
-$(window).on("resize", () => {
-    if (window.matchMedia("(max-width: 576px)").matches) {
-        setupMobileMenu(); // ponovo setuje event i CSS
-        // location.reload();
-        
-    }
-});
+//     resizeTimer = setTimeout(function () {
+//         location.reload();
+//     }, 300);
+// });
 
 }
 
@@ -898,4 +895,3 @@ document.getElementById("submit").onclick=function(){
 
 
 ///////////////////////////////////////////  ⁡⁢⁣⁣RESPONSIVE⁡ ////////////////
-
