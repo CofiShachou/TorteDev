@@ -62,7 +62,7 @@ $("body").prepend(`<header id="header">
             <li><a href="cenovnik.html">Cenovnik</a></li>
             <li><p id="kontakt">Kontakt</p></li>
             <li><a href="oAutoru.html">O autoru</a></li>
-            <li><a href="resources/Poslasticarnica.zip">Zip fajl</a>
+            <li><a href="https://drive.google.com/uc?export=download&id=1kxKkmpN-fCs0ojO8sFZMmRLXcto2oLh5">Zip fajl</a>
 
         </ul>
 
