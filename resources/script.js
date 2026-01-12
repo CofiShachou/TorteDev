@@ -13,29 +13,29 @@ $("body").prepend(`<header id="header">
 
                 <div class="dropDown">
                     <div class="svecane">
-                        <a href="svecaneTorte.html">Svecane</a>
+                        <a href="svecaneTorte.html">Svečane</a>
                         <i class="fa-solid fa-chevron-down side"></i>
                         <div id="t1">
-                            <a href="svecaneSaMason.html">Svecane torte sa masom</a>
-                            <a href="svecaneSaSlagom.html">Svecane torte sa slagom</a>
+                            <a href="svecaneSaMason.html">Svečane torte sa masom</a>
+                            <a href="svecaneSaSlagom.html">Svečane torte sa slagom</a>
                         </div>
                     </div>
 
                     <div class="mladenacke">
-                        <a href="mladalackeTorte.html">Mladenacke</a>
+                        <a href="mladalackeTorte.html">Mladenačke</a>
                         <i class="fa-solid fa-chevron-down side"></i>
                         <div id="t2">
-                            <a href="mladalackeSaMasom.html ">Mladenacke torte sa masom</a>
-                            <a href="mladalackeSaSalgom.html">Mladenacke torte sa slagom</a>
+                            <a href="mladalackeSaMasom.html ">Mladenačke torte sa masom</a>
+                            <a href="mladalackeSaSalgom.html">Mladenačke torte sa slagom</a>
                         </div>
                     </div>
 
                     <div class="decije">
-                        <a href="decijeTorte.html">Decije</a>
+                        <a href="decijeTorte.html">Dečije</a>
                         <i class="fa-solid fa-chevron-down side"></i>
                         <div id="t3">
-                            <a href="decijeSaMasom.html">Decije torte sa masom</a>
-                            <a href="decijeSaSlagom.html">Decije torte sa slagom</a>
+                            <a href="decijeSaMasom.html">Dečije torte sa masom</a>
+                            <a href="decijeSaSlagom.html">Dečije torte sa slagom</a>
                         </div>
                     </div>
 
@@ -52,7 +52,7 @@ $("body").prepend(`<header id="header">
                 <a href="ponudaUkusa.html">Ponuda ukusa</a>
                 <i class="fa-solid fa-chevron-down down"></i>
                 <div id="pd">
-                    <a href="ukusiKolaci.html">Kolaci</a>
+                    <a href="ukusiKolaci.html">Kolači</a>
                     <a href="ukusiTorte.html">Torte</a>
                     <a href="ukusiSlano.html">Slano</a>
                 </div>
@@ -443,7 +443,7 @@ if(idTorte!="DM"){
 $("script:first").before(`
     <footer id="footer">
         <div class="col">
-            <h2>Porucite telefonom</h2>
+            <h2>Poručite telefonom</h2>
             <div id="tel">
                 <button><a href="tel:+381/011-3460-136">011 3460 136</a></button>
                 <button><a href="tel:+381/064-2333-272">064 2333 272</a></button>
@@ -469,7 +469,7 @@ $("script:first").before(`
                 <i class="fa-solid fa-location-dot"></i>
                 <div class="col">
                     <h3>Lokacija</h3>
-                    <p>Cvetanova ćuprija 48, Veliki Mokri Lug, Beograd.</p>
+                    <p>Cvetanova Ćuprija 48, Veliki Mokri Lug, Beograd.</p>
                 </div>
             </div>
 
@@ -483,29 +483,29 @@ $("script:first").before(`
                     <ul class="nav">
                         <li id="torte"><h3>Torte</h3>
                             <ul class="subMeni">
-                                <li><h4>Svecane</h4></li>
+                                <li><h4>Svečane torte</h4></li>
                                 <li class="ml"><a href="svecaneSaMason.html">Sa maso</a></li>
-                                <li class="ml"></i><a href="svecaneSaSlagom.html">Sa slagom</a></li>
-                                <li><h4>Mladalacke torte</h4></li>
+                                <li class="ml"></i><a href="svecaneSaSlagom.html">Sa šlagom</a></li>
+                                <li><h4>Mladalačke torte</h4></li>
                                 <li class="ml"><a href="mladalackeSaMasom.html">Sa masom</a></li>
-                                <li class="ml"><a href="mladalackeSaSalgom.html">Sa slagom</a></li>
-                                <li><h4>Decije torte</h4></li>
+                                <li class="ml"><a href="mladalackeSaSalgom.html">Sa šlagom</a></li>
+                                <li><h4>Dečije torte</h4></li>
                                 <li class="ml"><a href="decijeSaMasom.html">Sa maso</a></li>
-                                <li class="ml"><a href="decijeSaSlagom.html">Sa slagom</a></li>
+                                <li class="ml"><a href="decijeSaSlagom.html">Sa šlagom</a></li>
                             </ul>
                         </li>
 
                         <li id="ukusi"><h3>Ukusi</h3>
                             <ul class="subMeni">
                                 <li><a href="ukusiTorte.html" id="torta">Torte</a></li>
-                                <li><a href="ukusiKolaci.html" id="kolac">Kolaci</a></li>
+                                <li><a href="ukusiKolaci.html" id="kolac">Kolači</a></li>
                                 <li><a href="ukusiSlano.html" id="slano">Slano</a></li>
                             </ul>
                         </li>
                         <li id="ostalo"><h3>Ostalo</h3>
                             <ul class="subMeni">
                                 <li><a href="figureZaMladence.html">Figure</a></li>
-                                <li><a href="kolaci.html">Kolaci</a></li>
+                                <li><a href="kolači.html">Kolaci</a></li>
                                 <li><a href="slano.html">Slano</a></li>
                                 <li><a href="presekTorti.html">Presek torti</a></li>
                                 <li><a href="oAutoru.html">O autoru</a></li>
