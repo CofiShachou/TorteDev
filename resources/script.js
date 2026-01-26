@@ -61,8 +61,6 @@ $("body").prepend(`<header id="header">
             
             <li><a href="cenovnik.html">Cenovnik</a></li>
             <li><p id="kontakt">Kontakt</p></li>
-            <li><a href="oAutoru.html">O autoru</a></li>
-            <li><a href="https://drive.google.com/uc?export=download&id=1kxKkmpN-fCs0ojO8sFZMmRLXcto2oLh5">Zip fajl</a>
 
         </ul>
 
@@ -466,7 +464,8 @@ $("script:first").before(`
                 <i class="fa-solid fa-location-dot"></i>
                 <div class="col">
                     <h3>Lokacija</h3>
-                    <p>Cvetanova Ćuprija 48, Veliki Mokri Lug, Beograd.</p>
+                    <p>Stara ulica: Cvetanova Ćuprija 48, Veliki Mokri Lug, Beograd.</p>
+                    <p>Nova ulica: Srđana Kneževića 48, Beograd, Serbia</p>
                 </div>
             </div>
 
@@ -505,7 +504,6 @@ $("script:first").before(`
                                 <li><a href="kolači.html">Kolaci</a></li>
                                 <li><a href="slano.html">Slano</a></li>
                                 <li><a href="presekTorti.html">Presek torti</a></li>
-                                <li><a href="oAutoru.html">O autoru</a></li>
                             </ul>
                         </li>
                     </ul> 
