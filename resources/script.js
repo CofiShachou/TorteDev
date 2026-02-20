@@ -3,27 +3,22 @@ $(document).ready(()=>{
     console.log("Niz kolacica= "+nizKolacica);
     let [n,v]=nizKolacica[0].split("=")
 
-    if(n){
-        console.log("Ima");
-        $("#neradniDan").css("display","none");
-    }
-    else{
-        console.log("Nema");
-       
+    if(!n){
+        $("#neradniDanWrapper").css("display","flex");
     }
 
 $("#neradniDanButton").click(()=>{
-    $("#neradniDan").animate({
+    $("#neradniDanWrapper").animate({
         height: 0,
         opacity:0
     }, 200);
     
     setTimeout(() => {
-        $("#neradniDan").css("display","none");
+        $("#neradniDanWrapper").css("display","none");
     }, 1000);
 
     let datum=new Date()
-    datum.setDate(datum.getDate()+2);
+    datum.setHours(datum.getHours()+2);
     document.cookie=`neradniDan=OK;expires=`+datum.toUTCString();
 })
 

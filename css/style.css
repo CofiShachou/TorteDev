@@ -47,7 +47,7 @@ img{
 img:hover{
     cursor: pointer;
 }
-h1,h2,h3,h4{
+h1,h2,h3,h4,span{
     font-family: nasloviText;
     letter-spacing: 2px;
     color: var(--secondary3);
@@ -200,34 +200,70 @@ iframe{
     width: 20vw;
     height: 15vw;
 }
-#neradniDan{
+#neradniDanWrapper{
     position: fixed;
     left: 0vw;
-    bottom: 0vh;
-    display: flex;
+    top: 0vh;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 10;
     width: 100vw;
-    height: 13vh;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    /* display: none; */
+}
+#neradniDan{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 50vh;
     background-color: var(--secondary3);
     gap: 15px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid var(--secondary1);
 }
-#neradniDanNaslov{
+#neradniDan h2{
+    font-size: 50px;
     color: var(--secondary1);
+}
+#neradniDan h3,span{
+    font-size: 40px;
     color: var(--primary);
+    /* font-weight: bold; */
 }
 #neradniDanButton{
-    padding: 5px 15px;
+    padding: 5px 30px;
     background-color: var(--secondary1);
     color: var(--primary);
-    font-size: 25px;
+    font-size: 40px;
     border-radius: 10px;
     box-shadow: 0px 5px var(--secondary1l),
     0px 5px var(--secondary1l);
     transition-duration: 0.1s;
-
+    margin-top: 5%;
+}
+.outer,.inner{
+    display: inline-block;
+    color: var(--secondary1);
+}
+.outer{
+    animation: skok 3s infinite;
+    animation-delay: 0.5s;
+}
+.inner{
+    animation: skok 3s infinite;
+    animation-delay: 1s;
+}
+@keyframes skok{
+    0%{transform: translateY(0px)}
+    20%{transform: translateY(-20px)}
+    40%{transform: translateY(0px)}
+    100%{transform: translateY(0px)}
 }
 #neradniDanButton:hover{
     cursor: pointer;
