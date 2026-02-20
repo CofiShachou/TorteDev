@@ -1,9 +1,9 @@
 @font-face{
-    font-family: niga;
+    font-family: sveText;
     src:url(../resources/fonts/fontic.ttf);
 }
 @font-face{
-    font-family: nigan;
+    font-family: nasloviText;
     src:url(../resources/fonts/naslovi.ttf);
 }
 *{
@@ -16,7 +16,7 @@
     box-sizing: border-box;
     transition-duration: 0.5s;
     color: black;
-    font-family: niga;
+    font-family: sveText;
     font-weight:500;
     white-space: normal;
     scroll-behavior: smooth;
@@ -30,6 +30,7 @@ body{
 
     --primary:rgb(255, 255, 255);
      --secondary1:rgb(233, 162, 213);
+     --secondary1l:rgb(191, 114, 169);
     --secondary2:rgb(48, 199, 206);
     --secondary3: rgb(118, 206, 200);  
       
@@ -47,7 +48,7 @@ img:hover{
     cursor: pointer;
 }
 h1,h2,h3,h4{
-    font-family: nigan;
+    font-family: nasloviText;
     letter-spacing: 2px;
     color: var(--secondary3);
 
@@ -199,8 +200,43 @@ iframe{
     width: 20vw;
     height: 15vw;
 }
+#neradniDan{
+    position: fixed;
+    left: 0vw;
+    bottom: 0vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    width: 100vw;
+    height: 13vh;
+    background-color: var(--secondary3);
+    gap: 15px;
+}
+#neradniDanNaslov{
+    color: var(--secondary1);
+    color: var(--primary);
+}
+#neradniDanButton{
+    padding: 5px 15px;
+    background-color: var(--secondary1);
+    color: var(--primary);
+    font-size: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 5px var(--secondary1l),
+    0px 5px var(--secondary1l);
+    transition-duration: 0.1s;
 
-
+}
+#neradniDanButton:hover{
+    cursor: pointer;
+}
+#neradniDanButton:active{
+    transform: translateY(5px);
+    box-shadow: 0px 0px var(--secondary1l),
+    0px 0px var(--secondary1l);
+}
 /* ⁡⁢⁣⁣........CUSTOM CLASS..........⁡ */
 .ml{
     margin-left: 1vw;

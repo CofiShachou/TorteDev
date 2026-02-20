@@ -1,4 +1,32 @@
 $(document).ready(()=>{
+    let nizKolacica=document.cookie.split(";")
+    console.log("Niz kolacica= "+nizKolacica);
+    let [n,v]=nizKolacica[0].split("=")
+
+    if(n){
+        console.log("Ima");
+        $("#neradniDan").css("display","none");
+    }
+    else{
+        console.log("Nema");
+       
+    }
+
+$("#neradniDanButton").click(()=>{
+    $("#neradniDan").animate({
+        height: 0,
+        opacity:0
+    }, 200);
+    
+    setTimeout(() => {
+        $("#neradniDan").css("display","none");
+    }, 1000);
+
+    let datum=new Date()
+    datum.setDate(datum.getDate()+2);
+    document.cookie=`neradniDan=OK;expires=`+datum.toUTCString();
+})
+
 $("body").prepend(`<header id="header">
 
 <div id="nav">
