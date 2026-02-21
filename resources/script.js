@@ -22,22 +22,25 @@ $("#neradniDanButton").click(()=>{
     document.cookie=`neradniDan=OK;expires=`+datum.toUTCString();
 })
 
-$("body").prepend(`<header id="header">
 
+$("body").prepend(`<header id="header">
 <div id="nav">
-    <a href="index.html"><img src="resources/images/logo.png" alt="logo" class="logo" id="logo"></a> 
-    <i class="fa-solid fa-list-ul" id="click"></i>
+    <a href="index.html"><img src="resources/images/logo.png" alt="logo" class="logo" id="logo"></a>
+    <i id="click" class="fa-solid fa-list-ul" ></i>
+    
     </div>
         <ul>
             <li><a href="kolaci.html">Kolači</a></li>
             <li id="torte">
                 <a href="torte.html">Torte</a>
-                <i class="fa-solid fa-chevron-down down"></i> 
+                <i class="fa-solid fa-chevron-down down" id="torteDown"></i> 
 
                 <div class="dropDown">
                     <div class="svecane">
-                        <a href="svecaneTorte.html">Svečane</a>
-                        <i class="fa-solid fa-chevron-down side"></i>
+                        <div>
+                            <a href="svecaneTorte.html">Svečane</a>
+                            <i class="fa-solid fa-chevron-down side"></i>
+                        </div>
                         <div id="t1">
                             <a href="svecaneSaMason.html">Svečane torte sa masom</a>
                             <a href="svecaneSaSlagom.html">Svečane torte sa slagom</a>
@@ -45,8 +48,10 @@ $("body").prepend(`<header id="header">
                     </div>
 
                     <div class="mladenacke">
-                        <a href="mladalackeTorte.html">Mladenačke</a>
-                        <i class="fa-solid fa-chevron-down side"></i>
+                        <div>
+                            <a href="mladalackeTorte.html">Mladenačke</a>
+                            <i class="fa-solid fa-chevron-down side"></i>
+                        </div>
                         <div id="t2">
                             <a href="mladalackeSaMasom.html ">Mladenačke torte sa masom</a>
                             <a href="mladalackeSaSalgom.html">Mladenačke torte sa slagom</a>
@@ -54,8 +59,10 @@ $("body").prepend(`<header id="header">
                     </div>
 
                     <div class="decije">
-                        <a href="decijeTorte.html">Dečije</a>
-                        <i class="fa-solid fa-chevron-down side"></i>
+                        <div>
+                            <a href="decijeTorte.html">Dečije</a>
+                            <i class="fa-solid fa-chevron-down side"></i>
+                        </div>
                         <div id="t3">
                             <a href="decijeSaMasom.html">Dečije torte sa masom</a>
                             <a href="decijeSaSlagom.html">Dečije torte sa slagom</a>
@@ -89,10 +96,104 @@ $("body").prepend(`<header id="header">
 
     </header>`)  
      
-        
-     
-        
-if ($("#click").css("display") === "none") {
+if (window.innerWidth <= 576) {
+    const $menu = $("#header > ul");
+let dropDown=$(".dropDown")
+let PD=$("#pd")
+let t1=$("#t1")
+let duzinaHeadera;
+let duzinaHeaderaSaTortama
+let duzinaHeaderaSaUkusima
+let duzinaHeaderaSaT
+
+let visinaDropDown
+let visinaPD
+let visinaT
+function visinaHeader(){
+    $("#t1").css({
+    display: "none",
+    position: "",
+    visibility: "",
+})
+$("#t2").css({
+    display: "none",
+    position: "",
+    visibility: "",
+})
+$("#t3").css({
+    display: "none",
+    position: "",
+    visibility: "",
+})
+$menu.css({
+    display: "flex",
+    position: "absolute",
+    visibility: "visible"
+});
+duzinaHeadera = $menu[0].scrollHeight;
+
+$(".dropDown").css({
+    display: "flex",
+    position: "absolute",
+    visibility: "hidden",
+})
+visinaDropDown = dropDown[0].scrollHeight;
+console.log("Visina drop Down "+visinaDropDown);
+
+duzinaHeaderaSaTortama=duzinaHeadera+visinaDropDown
+
+$("#pd").css({
+    display: "flex",
+    position: "absolute",
+    visibility: "hidden",
+})
+visinaPD=PD[0].scrollHeight
+duzinaHeaderaSaUkusima=duzinaHeadera+visinaPD
+
+$("#t1").css({
+    display: "flex",
+    position: "absolute",
+    visibility: "hidden",
+})
+visinaT=t1[0].scrollHeight
+duzinaHeaderaSaT=visinaT+duzinaHeaderaSaTortama
+
+console.log("Visina headera= "+duzinaHeadera);
+console.log("Visina headera sa tortana= "+duzinaHeaderaSaTortama);
+console.log("Visina headera sa ponudom= "+duzinaHeaderaSaUkusima);
+console.log("Visina headera sa T= "+duzinaHeaderaSaT);
+
+$("#t1").css({
+    display: "none",
+    position: "",
+    visibility: "",
+})
+$("#pd").css({
+    display: "none",
+    position: "",
+    visibility: "",
+})
+$(".dropDown").css({
+    display: "none",
+    position: "",
+    visibility: "",
+})
+$menu.css({
+    display: "none",
+    position: "",
+    visibility: "",
+    maxHeight:0
+});
+}
+visinaHeader();
+
+$(".svecane").click(()=>{
+    console.log("SVECANE");
+    
+})
+    
+    
+if ($($menu).css("display") === "none") {
     console.log("bla");
 
     $("#torte").children("a, i").wrapAll("<div></div>");
@@ -100,55 +201,20 @@ if ($("#click").css("display") === "none") {
     $("#ponuda").children("a, i").wrapAll("<div></div>");
 
 
-
-
-
-    
-    
-    
-    // $("#header").prepend(`
-    // <div id="nav">
-    // <a href="index.html"><img src="resources/images/logo.png" alt="logo" class="logo" id="logo"></a> 
-    // 
-    // </div>`)
-    
-
     let toggle = false;
 
-// function setupMobileMenu() {
-    // document.getElementById("click").remove();
-    // $("#nav").append(`<i class="fa-solid fa-list-ul" id="click"></i>`)
-    const $menu = $("#header > ul");
     $("#click").click( function() {
-        console.log("DSADWA");
+        
         
         if(!toggle){
-        // $("#header").css("height","90vw")
        $menu.css({
                 display:"flex",
             });
             setTimeout(() => {
                 $menu.css({opacity:"1"});
-                if(torteToggle==true && ponudaToggle==true)
-                {
-                    $menu.css({
-                             height:"180vw"
-                         });
-                } else if(torteToggle==true && ponudaToggle==false){
-                    $menu.css({
-                             height:"130vw"
-                         });
-                } else if(torteToggle==false && ponudaToggle==true){
-                        $menu.css({
-                             height:"120vw"
-                         });
-                }else{
-                        $menu.css({
-                             height:"90vw"
-                         });                    
-                }
-
-
+                $menu.css({
+                            maxHeight:duzinaHeadera
+                         }); 
                     toggle=true;
             }, 1);
 
@@ -156,70 +222,90 @@ if ($("#click").css("display") === "none") {
                 color:"var(--secondary1)"
             })
     } else{
-        // $("#header").css("height","10vw")
         $menu.css({
-                    opacity:"0",
-                    height:"0vw",
-                });
-    
+                maxHeight:"0px"
+            });
         setTimeout(() => {
            $menu.css({
             display:"none",
         });
-        toggle=false;
+            toggle=false;
         }, 1000);
 
         $("#click").css({
                 color:"var(--primary)"
-            })
+        })
+
+        ////////  ⁡⁢⁣⁣TORTE DROWP DOWN⁡⁡ ////////////
+        $(".dropDown").css({
+            opacity:"0",
+            height:"0vw",
+        })
+        setTimeout(() => {
+            $(".dropDown").css({
+            display:"none",
+            visibility: "hidden",
+        })}, 1000);
+
+        /////////  ⁡⁢⁣⁣PONUDA UKUSA DROP DOWN⁡ ///////// 
+
+        $("#pd").css({
+            opacity:"0",
+            height:"0vw"
+        })
+        setTimeout(() => {
+            $("#pd").css({
+            display:"none",
+            visibility: "hidden",
+        })
+        }, 1000);
+
+        ///////////  ⁡⁢⁣⁣TOGGLES⁡ //////////
+            ponudaToggle=false;
+            torteToggle=false;
     }
     });
 
-    let torteToggle=false
-$("#torte").click(()=>{
+    let torteToggle=false;
+    
+
+
+$("#torteDown").click(()=>{
     if(!torteToggle){
         $(".dropDown").css({
             display:"flex",
             visibility: "visible",
         })
-        if(ponudaToggle==true){
-            $menu.css({
-                height:"180vw"
+        $menu.css({
+                maxHeight:duzinaHeaderaSaTortama
+                // maxHeight:duzinaHeaderaSaT
             })
-        }else{
-            $menu.css({
-                height:"130vw"
-            })
-        }
         setTimeout(() => {
             $(".dropDown").css({
             opacity:"1",
-            height:"40vw",
-            // padding: "10px 20px"
-    
+            height:visinaDropDown,
+            // "background-color": "red"
         })
         }, 100);
         torteToggle=true
+
+        $("#pd").css({
+            opacity:"0",
+            height:"0vw"
+        }) 
+        setTimeout(() => {
+            $("#pd").css({
+            display:"none",
+            visibility: "hidden",
+        })
+        }, 1000);
+        ponudaToggle=false
     }
     else{
         $(".dropDown").css({
             opacity:"0",
             height:"0vw",
-            // padding: "0px 0px"
-    
-        })
-        if(ponudaToggle==true)
-        {
-            $menu.css({
-                height:"120vw"
-            })
-        }
-        else{
-            $menu.css({
-                height:"90vw"
-            })
-        }
-        
+        })        
         setTimeout(() => {
             $(".dropDown").css({
             display:"none",
@@ -237,42 +323,35 @@ $("#ponuda").click(()=>{
             display:"flex",
             visibility: "visible",
         })
-        if(torteToggle==true){
-            $menu.css({
-                height:"180vw"
-            })
-        }else{
-            $menu.css({
-                height:"120vw"
-            })
-        }
+        $menu.css({
+            maxHeight:duzinaHeaderaSaUkusima
+        })
         setTimeout(() => {
             $("#pd").css({
             opacity:"1",
-            height:"30vw",
-            // padding: "10px 20px"
-    
+            height:visinaPD
         })
         }, 100);
         ponudaToggle=true
+
+
+        $(".dropDown").css({
+            opacity:"0",
+            height:"0vw",
+        })        
+        setTimeout(() => {
+            $(".dropDown").css({
+            display:"none",
+            visibility: "hidden",
+        })
+        }, 1000);
+        torteToggle=false
     }
     else{
         $("#pd").css({
             opacity:"0",
             height:"0vw"
-        })
-        if(torteToggle==true)
-        {
-            $menu.css({
-                height:"130vw"
-            })
-        }
-        else{
-            $menu.css({
-                height:"90vw"
-            })
-        }
-         
+        }) 
         setTimeout(() => {
             $("#pd").css({
             display:"none",
@@ -282,18 +361,130 @@ $("#ponuda").click(()=>{
         ponudaToggle=false
     }
 })
-// }
-// setupMobileMenu();
-// let resizeTimer
-// $(window).on("resize", function() {
-//         clearTimeout(resizeTimer);
 
-//     resizeTimer = setTimeout(function () {
-//         location.reload();
-//     }, 300);
-// });
+///////////////   ⁡⁢⁣⁣SUBMENI⁡   /////////////////
+let svecaneToggle=false
+let mladenackeToggle=false
+let decijeToggle=false
+
+$(".svecane").click(()=>{
+    if(!svecaneToggle){
+        $("#t1").css({
+            display:"flex",
+            visibility: "visible",
+            // "background-color":"red"
+        })
+        $(".dropDown").css({
+            opacity:"1",
+            maxHeight:visinaT+visinaDropDown,
+        })
+        
+        $menu.css({
+            maxHeight:duzinaHeaderaSaT
+        })
+        $(".svecane").css({
+            maxHeight:"1000px",
+            height:"500px"
+        })
+        setTimeout(() => {
+            $("#t1").css({
+            opacity:"1",
+            maxHeight:visinaT
+        })
+        }, 100);
+        svecaneToggle=true
+    }
+    else{
+        $("#t1").css({
+            opacity:"0",
+            height:"0vw"
+        }) 
+        $(".dropDown").css({
+            opacity:"1",
+            maxHeight:visinaDropDown,
+        })
+        setTimeout(() => {
+            $("#t1").css({
+            display:"none",
+            visibility: "hidden",
+        })
+        }, 1000);
+        svecaneToggle=false
+    }
+})
+
+
+$(".mladenacke").click(()=>{
+    if(!svecaneToggle){
+        $("#t2").css({
+            display:"flex",
+            visibility: "visible",
+            // "background-color":"red"
+        })
+        $menu.css({
+            maxHeight:duzinaHeaderaSaT
+        })
+        setTimeout(() => {
+            $("#t2").css({
+            opacity:"1",
+            maxHeight:t1
+        })
+        }, 100);
+        mladenackeToggle=true
+    }
+    else{
+        $("#t2").css({
+            opacity:"0",
+            height:"0vw"
+        }) 
+        setTimeout(() => {
+            $("#t2").css({
+            display:"none",
+            visibility: "hidden",
+        })
+        }, 1000);
+        mladenackeToggle=false
+    }
+})
+
+
+$(".decije").click(()=>{
+    if(!svecaneToggle){
+        $("#t3").css({
+            display:"flex",
+            visibility: "visible",
+            // "background-color":"red"
+        })
+        $menu.css({
+            maxHeight:duznaHeaderaSaT
+        })
+        setTimeout(() => {
+            $("#t3").css({
+            opacity:"1",
+            maxHeight:t1
+        })
+        }, 100);
+        decijeToggle=true
+    }
+    else{
+        $("#t3").css({
+            opacity:"0",
+            height:"0vw"
+        }) 
+        setTimeout(() => {
+            $("#t3").css({
+            display:"none",
+            visibility: "hidden",
+        })
+        }, 1000);
+        decijeToggle=false
+    }
+})
 
 }
+
+}
+     
 
 
 
@@ -871,44 +1062,6 @@ window.onload = function(){
     strana();
 }
 })
-
-
-let greska=document.getElementById("greska")
-let regIme=document.getElementById("regIme")
-let regPrezime=document.getElementById("regPrezime")
-let regMail=document.getElementById("regMail")
-
-let imeReg = /^[A-Z][a-z]{1,15}$/;
-let mailReg=/^[a-z0-9]{3,20}@gmail.com$/
-document.getElementById("submit").onclick=function(){
-    let ime=document.getElementById("ime")
-    let prezime=document.getElementById("prezime")
-    let mail=document.getElementById("mail")
-    let radioMasa=document.getElementById("masa")
-    let radioSlag=document.getElementById("slag")
-    
-    if(!ime.value.length || !prezime.value.length || !mail.value.length || !(radioMasa.checked || radioSlag.checked)){
-        greska.textContent="Niste popunili sva polja"
-    }else{
-        greska.textContent=""
-    }
-
-    if(!imeReg.test(ime.value)){
-        regIme.textContent=`Ime mora biti u formatu "Veliko slovo + 1-15 malih slova"`
-    }else regIme.textContent=""
-
-    if(!imeReg.test(prezime.value)){
-        regPrezime.textContent=`Prezme mora biti u formatu "Veliko slovo + 1-15 malih slova"`
-    }else regPrezime.textContent=""
-
-     if(!mailReg.test(mail.value)){
-        regMail.textContent="Mail mora biti u formatu 3-20 slova ili brojeva + @gmail.com"
-    }else regMail.textContent=""
-
-    if(greska.textContent=="" && regIme.textContent=="" && regPrezime.textContent=="" && regMail.textContent==""){
-        document.getElementById("poslato").textContent="Porudžbina uspesno poslata"
-    }else document.getElementById("poslato").textContent=""
-}
 
 
 
