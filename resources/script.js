@@ -147,8 +147,9 @@ $("#pd").css({
     position: "absolute",
     visibility: "hidden",
 })
+let vw= window.innerWidth*0.02
 visinaPD=PD[0].scrollHeight
-duzinaHeaderaSaUkusima=duzinaHeadera+visinaPD
+duzinaHeaderaSaUkusima=duzinaHeadera+visinaPD+vw
 
 $("#t1").css({
     display: "flex",
@@ -330,6 +331,7 @@ $("#ponuda").click(()=>{
         $("#pd").css({
             display:"flex",
             visibility: "visible",
+            // padding:"2vw 0vw"
         })
         $menu.css({
             maxHeight:duzinaHeaderaSaUkusima

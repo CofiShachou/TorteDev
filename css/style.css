@@ -1583,10 +1583,11 @@ fieldset>label{
 
 
     #header ul li #pd{
-        gap: 15px;
+        gap: 2vw;
     }
     #header ul li #pd>div{
-        padding: 0px 10vw;
+        /* padding: 0px 10vw; */
+        padding: 2vw 10vw 2vw 10vw;
     }
     #header ul li #jestiveSlike{
         padding: 0px 10vw;
