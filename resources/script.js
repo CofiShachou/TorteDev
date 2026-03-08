@@ -69,7 +69,7 @@ $("body").prepend(`<header id="header">
                         </div>
                     </div>
 
-                    <div><a href="jestiveSlike.html">Jestive slike</a></div>
+                    <div id="jestiveSlike"><a href="jestiveSlike.html">Jestive slike</a></div>
 
                 </div>
             </li>
@@ -82,9 +82,9 @@ $("body").prepend(`<header id="header">
                 <a href="ponudaUkusa.html">Ponuda ukusa</a>
                 <i class="fa-solid fa-chevron-down down"></i>
                 <div id="pd">
-                    <a href="ukusiKolaci.html">Kolači</a>
-                    <a href="ukusiTorte.html">Torte</a>
-                    <a href="ukusiSlano.html">Slano</a>
+                    <div><a href="ukusiKolaci.html">Kolači</a></div>
+                    <div><a href="ukusiTorte.html">Torte</a></div>
+                    <div><a href="ukusiSlano.html">Slano</a></div>
                 </div>
             </li>
 
@@ -208,7 +208,7 @@ if ($($menu).css("display") === "none") {
         
         if(!toggle){
        $menu.css({
-                display:"flex",
+                display:"flex"
             });
             setTimeout(() => {
                 $menu.css({opacity:"1"});
@@ -223,12 +223,14 @@ if ($($menu).css("display") === "none") {
             })
     } else{
         $menu.css({
-                maxHeight:"0px"
+                maxHeight:"0px",
+                padding:"0px"
             });
         setTimeout(() => {
-           $menu.css({
-            display:"none",
-        });
+            $menu.css({
+                display:"none",
+            });
+            
             toggle=false;
         }, 1000);
 
@@ -239,7 +241,7 @@ if ($($menu).css("display") === "none") {
         ////////  ⁡⁢⁣⁣TORTE DROWP DOWN⁡⁡ ////////////
         $(".dropDown").css({
             opacity:"0",
-            height:"0vw",
+            height:"0vw"
         })
         setTimeout(() => {
             $(".dropDown").css({
@@ -276,6 +278,11 @@ $("#torteDown").click(()=>{
             display:"flex",
             visibility: "visible",
         })
+        setTimeout(() => {
+             $(".dropDown").css({
+            padding: "2vw 0vw"
+        })
+        }, 500);
         $menu.css({
                 maxHeight:duzinaHeaderaSaTortama
                 // maxHeight:duzinaHeaderaSaT
@@ -305,6 +312,7 @@ $("#torteDown").click(()=>{
         $(".dropDown").css({
             opacity:"0",
             height:"0vw",
+            padding:"0px"
         })        
         setTimeout(() => {
             $(".dropDown").css({
@@ -363,123 +371,123 @@ $("#ponuda").click(()=>{
 })
 
 ///////////////   ⁡⁢⁣⁣SUBMENI⁡   /////////////////
-let svecaneToggle=false
-let mladenackeToggle=false
-let decijeToggle=false
+// let svecaneToggle=false
+// let mladenackeToggle=false
+// let decijeToggle=false
 
-$(".svecane").click(()=>{
-    if(!svecaneToggle){
-        $("#t1").css({
-            display:"flex",
-            visibility: "visible",
-            // "background-color":"red"
-        })
-        $(".dropDown").css({
-            opacity:"1",
-            maxHeight:visinaT+visinaDropDown,
-        })
-        
-        $menu.css({
-            maxHeight:duzinaHeaderaSaT
-        })
-        $(".svecane").css({
-            maxHeight:"1000px",
-            height:"500px"
-        })
-        setTimeout(() => {
-            $("#t1").css({
-            opacity:"1",
-            maxHeight:visinaT
-        })
-        }, 100);
-        svecaneToggle=true
-    }
-    else{
-        $("#t1").css({
-            opacity:"0",
-            height:"0vw"
-        }) 
-        $(".dropDown").css({
-            opacity:"1",
-            maxHeight:visinaDropDown,
-        })
-        setTimeout(() => {
-            $("#t1").css({
-            display:"none",
-            visibility: "hidden",
-        })
-        }, 1000);
-        svecaneToggle=false
-    }
-})
-
-
-$(".mladenacke").click(()=>{
-    if(!svecaneToggle){
-        $("#t2").css({
-            display:"flex",
-            visibility: "visible",
-            // "background-color":"red"
-        })
-        $menu.css({
-            maxHeight:duzinaHeaderaSaT
-        })
-        setTimeout(() => {
-            $("#t2").css({
-            opacity:"1",
-            maxHeight:t1
-        })
-        }, 100);
-        mladenackeToggle=true
-    }
-    else{
-        $("#t2").css({
-            opacity:"0",
-            height:"0vw"
-        }) 
-        setTimeout(() => {
-            $("#t2").css({
-            display:"none",
-            visibility: "hidden",
-        })
-        }, 1000);
-        mladenackeToggle=false
-    }
-})
+// $(".svecane").click(()=>{
+//     if(!svecaneToggle){
+//         $(".svecane").css({
+//             // height:"500px"
+//         })
+//         $("#t1").css({
+//             display:"flex",
+//             visibility: "visible",
+//             height:visinaT
+//             // height:"500px"
+//         })
+//         $(".dropDown").css({
+//             opacity:"1",
+//             // height:visinaT+visinaDropDown,
+//             height:visinaT+visinaDropDown,
+//         })
+//         $menu.css({
+//             maxHeight:duzinaHeaderaSaT
+//             // height:"12px"
+//         })
+//         setTimeout(() => {
+//             $("#t1").css({
+//             opacity:"1",
+//             // maxHeight:visinaT
+//         })
+//         }, 100);
+//         svecaneToggle=true
+//     }
+//     else{
+//         $("#t1").css({
+//             opacity:"0",
+//             height:"0vw"
+//         }) 
+//         $(".dropDown").css({
+//             height:visinaDropDown
+//         })
+//         setTimeout(() => {
+//             $("#t1").css({
+//             display:"none",
+//             visibility: "hidden",
+//         })
+//         }, 1000);
+//         svecaneToggle=false
+//     }
+// })
 
 
-$(".decije").click(()=>{
-    if(!svecaneToggle){
-        $("#t3").css({
-            display:"flex",
-            visibility: "visible",
-            // "background-color":"red"
-        })
-        $menu.css({
-            maxHeight:duznaHeaderaSaT
-        })
-        setTimeout(() => {
-            $("#t3").css({
-            opacity:"1",
-            maxHeight:t1
-        })
-        }, 100);
-        decijeToggle=true
-    }
-    else{
-        $("#t3").css({
-            opacity:"0",
-            height:"0vw"
-        }) 
-        setTimeout(() => {
-            $("#t3").css({
-            display:"none",
-            visibility: "hidden",
-        })
-        }, 1000);
-        decijeToggle=false
-    }
-})
+// $(".mladenacke").click(()=>{
+//     if(!svecaneToggle){
+//         $("#t2").css({
+//             display:"flex",
+//             visibility: "visible",
+//             // "background-color":"red"
+//         })
+//         $menu.css({
+//             maxHeight:duzinaHeaderaSaT
+//         })
+//         setTimeout(() => {
+//             $("#t2").css({
+//             opacity:"1",
+//             maxHeight:t1
+//         })
+//         }, 100);
+//         mladenackeToggle=true
+//     }
+//     else{
+//         $("#t2").css({
+//             opacity:"0",
+//             height:"0vw"
+//         }) 
+//         setTimeout(() => {
+//             $("#t2").css({
+//             display:"none",
+//             visibility: "hidden",
+//         })
+//         }, 1000);
+//         mladenackeToggle=false
+//     }
+// })
+
+
+// $(".decije").click(()=>{
+//     if(!svecaneToggle){
+//         $("#t3").css({
+//             display:"flex",
+//             visibility: "visible",
+//             // "background-color":"red"
+//         })
+//         $menu.css({
+//             maxHeight:duznaHeaderaSaT
+//         })
+//         setTimeout(() => {
+//             $("#t3").css({
+//             opacity:"1",
+//             maxHeight:t1
+//         })
+//         }, 100);
+//         decijeToggle=true
+//     }
+//     else{
+//         $("#t3").css({
+//             opacity:"0",
+//             height:"0vw"
+//         }) 
+//         setTimeout(() => {
+//             $("#t3").css({
+//             display:"none",
+//             visibility: "hidden",
+//         })
+//         }, 1000);
+//         decijeToggle=false
+//     }
+// })
 
 }
 

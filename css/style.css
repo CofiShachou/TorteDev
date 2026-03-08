@@ -227,6 +227,9 @@ iframe{
     border-radius: 10px;
     border: 2px solid var(--secondary1);
 }
+#neradniPon{
+        display: flex;
+    }
 #neradniDan h2{
     font-size: 50px;
     color: var(--secondary1);
@@ -397,7 +400,7 @@ iframe{
 #ponuda:hover #pd{
     visibility: visible;
     opacity: 1;
-    width: 200px;
+    /* width: 200px; */
 }
 #header li{
     cursor: pointer;
@@ -1231,12 +1234,16 @@ fieldset>label{
     }
     #ponuda:hover #pd {
         opacity: 0;
-        width: auto;
+        /* width: auto; */
     }
     .dropDown,#pd{
-        padding: 0px 20px;
         height: 0px;
+        box-sizing:content-box;
         /* border:0px */
+        transition-duration: 1s;
+        /* width: 100vw; */
+        /* background-color: red; */
+        /* max-height: 1000px; */
     }
     
     .logo{
@@ -1260,15 +1267,23 @@ fieldset>label{
     }
     #t1,#t2,#t3,.svecane,.mladenacke,.decije{
         display: none;
-        max-height: 500px;
+        /* max-height: 500px; */
         left: 0%;
         top: 0%;
         position: relative;
         visibility: hidden;
     }
+    #t1,#t2,#t3{
+        /* max-height: 1000px; */
+        padding: 0px;
+        height: 0px;
+        /* transition-duration: 1s; */
+    }
+   
     .svecane,.mladenacke,.decije{
+        /* background-color: purple; */
         position: relative;
-        max-height: 100px;
+        /* max-height: 100px; */
         color: white;
         visibility: visible;
         /* opacity: 1; */
@@ -1277,15 +1292,15 @@ fieldset>label{
         display: none;
         flex-direction: column;
         width: 100vw;
-        padding: 2vw 0vw;
         gap: 3vw;
-        opacity: 1;
+        opacity: 0;
         
         transition-duration: 1s;
 
-        max-height: 5000px;
-        overflow: hidden;
-        transition: max-height 1s ease;
+        /* max-height: 5000px; */
+        /* overflow: hidden; */
+        /* border: 2px solid red; */
+        /* transition: max-height 1s ease; */
     }
     #header ul li{
         display: flex;
@@ -1298,7 +1313,7 @@ fieldset>label{
     #header ul li:last-of-type{
         border-bottom:none;
     }
-    #header ul li div:has(+ div) {
+    #header ul li div:has(+ div){
         margin: 0vw 5vw 2vw 5vw;
         width: 90%;
         display: flex;
@@ -1322,20 +1337,34 @@ fieldset>label{
         display: flex;
         max-height: 1000px;
     } */
-    :is(#torte,#pd)>div:last-of-type>div{
+    :is(#torte,#ponuda)>div:last-of-type>div{
         border-bottom: 2px solid var(--secondary1);
         margin: 0px;
-        padding: 0px 50px;
+        padding: 0px 5vw;
+        /* height: 200px; */
         width: 100%;  
+        /* background-color: red; */
+    }
+    :is(#torte,#ponuda)>div:last-of-type>div:last-of-type{
+        border-bottom:none;
     }
     #pd{
         gap: 0px;
     }
-    :is(#torte,#pd)>div:last-of-type>a{
+    /* :is(#torte,#pd)>div:last-of-type>a{
         border-bottom: 2px solid var(--secondary1);
         margin: 0px;
-        padding: 0px 50px;
+        padding: 0px 10px;
         width: 100vw;
+    } */
+    :is(.svecane,.mladenacke,.decije)>div:last-of-type>a{
+        border-bottom: 2px solid var(--secondary1);
+        margin: 0px;
+        padding: 0px 20vw;
+        width: 100vw;
+    }
+    :is(.svecane,.mladenacke,.decije)>div:first-of-type>i{
+        display: none;
     }
     :is(#torte,#pd)>div:last-of-type{
         border: none;
@@ -1485,7 +1514,6 @@ fieldset>label{
         margin-bottom: 32px;
     }
 
-
     /* ⁡⁢⁣⁣UKUSI TORTE⁡ */
     .sve div .cokoTorte{
         grid-template-columns: 30vw 60vw;
@@ -1553,4 +1581,26 @@ fieldset>label{
         width: 90vw;
     }
 
+
+    #header ul li #pd{
+        gap: 15px;
+    }
+    #header ul li #pd>div{
+        padding: 0px 10vw;
+    }
+    #header ul li #jestiveSlike{
+        padding: 0px 10vw;
+    }
+
+    #neradniDan{
+        width: 80vw;
+        height: 50vh;
+    }
+    #neradniDan h2{
+        font-size: 40px;
+    }
+    #neradniDan h3,span{
+        font-size: 5vw;
+    }
+    
 }
