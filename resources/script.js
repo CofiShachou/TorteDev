@@ -988,10 +988,12 @@ $("#nazad").click(()=>{
         redniBrojStrane--;
         strana();
     }
+
+
     
     
-     console.log("Brih aktivne slike= "+brojAktivneSlike);
-    console.log("Min slika= "+minSlika);
+    //  console.log("Brih aktivne slike= "+brojAktivneSlike);
+    // console.log("Min slika= "+minSlika);
 })
 
 
@@ -1014,22 +1016,31 @@ $("#napred").click(()=>{
         return $(this).css("display") !== "none";
     });
 
-    if ((redniBrojStrane == (maxStrana-1)) && (brojAktivneSlike == maxSlika))
-    {
-        console.log("PRVI IF");  
-    }
-    else{
-
-   
-        maxSlika = vidljiveSlike.last().attr("id");
+     maxSlika = vidljiveSlike.last().attr("id");
         maxSlika=maxSlika.substring(2);
+        console.log("---------------Max slika gore= "+maxSlika);
     
+    
+    // if ((redniBrojStrane == (maxStrana-1)) && (brojAktivneSlike == maxSlika))
+    // {
+    //     console.log("PRVI IF");  
+    // }
+    // else{
+
+    if(brojAktivneSlike==maxSlika && redniBrojStrane==(maxStrana-1)){
+        console.log("KITA");
+        return
+    }else{
+       
+        
+        
     
         vrstaTorte=kodSlike.substring(0,2);
         brojAktivneSlike=kodSlike.substring(2)        
 
         maxSlika=parseInt(maxSlika);
-
+        console.log("MAX SLIKA= "+maxSlika);
+        
         brojAktivneSlike=parseInt(brojAktivneSlike)+1;
         kodSlike=vrstaTorte+brojAktivneSlike;
 
@@ -1061,7 +1072,14 @@ $("#napred").click(()=>{
         strana();        
     }
  
+    console.log("-----------------------------");
     
+    console.log("Redni broj strane= "+redniBrojStrane);
+    console.log("MAX STERANA= "+maxStrana);
+    
+    console.log("Broj aktivne slike= "+brojAktivneSlike);
+    console.log("Max Slika= "+maxSlika);
+    console.log("-----------------------------");
     
 })
 

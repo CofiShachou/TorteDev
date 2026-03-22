@@ -391,7 +391,7 @@ iframe{
 
     padding: 10px 20px;
     gap: 10px;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
 }
 #torte:hover .dropDown{
     visibility: visible;
@@ -930,7 +930,35 @@ iframe{
 .ceneWrap{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding: 2rem;
+}
+.cenovnikObavestenje{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    text-align: center;
+}
+.cenovnikObavestenje h3{
+    font-size: 1.5vw;
+}
+.cenovnikObavestenje p{
+    font-size: 1vw;
+    color: var(--primary);
+    font-weight: bold;
+}
+.cenovnikObavestenje div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(233, 162, 213, 1);
+    /* background-color: rgba(233, 162, 213, 1),; */
+    padding: 2vw 10vw;
+    margin-top: 2vw;
 }
 .cene{
     display: grid;
@@ -1203,7 +1231,7 @@ fieldset>label{
     }
     footer{
         flex-direction: column;
-        gap: 24px;
+        gap: 30vw;
         padding: 10px;
     }
     iframe{
@@ -1472,17 +1500,20 @@ fieldset>label{
         grid-template-rows: repeat(5,100px);
     }
     #velikaSlika{
-        width: 50vw;
-        height: 40vw;
+        width: 65vw;
+        height: 70vw;
+        object-fit:cover;
     }
     .controls{
-        padding: 4rem 2rem 0rem 2rem;
-        gap: 5vw;
+        padding: 4rem 1rem 0rem 1rem;
+        gap: 1vw;
     }
     #sifra{
         font-size: 25px;
     }
-
+    .viewWrapper{
+        padding: 1vw;
+    }
     /* ⁡⁢⁣⁣UKUSI CENCE⁡⁡ */
     .cene{
         grid-template-columns: 60vw 30vw;
@@ -1492,7 +1523,7 @@ fieldset>label{
     font-size: 20px;
     }
     .cene>div:nth-child(even)>p:last-of-type{
-    font-size: 15px;
+    font-size: 25px;
     }
     .sve div div p{
         font-size: 14px;
@@ -1538,6 +1569,13 @@ fieldset>label{
     }
 
 
+.cenovnikObavestenje h3{
+    font-size: 4vw;
+}
+.cenovnikObavestenje p{
+    font-size: 3vw;
+}
+
     /* ⁡⁢⁣⁣SUB KATEGORIJE ZA BIRANJE⁡ */
     .torte{
         margin-top: 20px;
@@ -1553,34 +1591,6 @@ fieldset>label{
     .torte div div a{
         font-size: 20px;
     }
-
-
-    /* ///////////////////// ⁡⁢⁣⁣O autoru⁡ ///////////// */
-
-    .autorMain{
-        padding: 1vw 5vw;
-    }
-    .autorWrap{
-        padding: 5vw 1vw;
-    }
-    .autorWrap p{
-        font-size: 16px;
-    }
-    #pfp{
-    width: 70vw;
-    height: 80vw;
-    border-radius: 10px;
-    border: 2px solid var(--secondary1);
-    }
-
-    .form{
-        padding: 10vw 0vw;
-    }
-    .form form{
-        grid-template-columns: repeat(2, 40vw);
-        width: 90vw;
-    }
-
 
     #header ul li #pd{
         gap: 2vw;
@@ -1603,5 +1613,10 @@ fieldset>label{
     #neradniDan h3,span{
         font-size: 5vw;
     }
-    
+    .footerDropDown{
+        margin-top: -20vw;
+    }
+    .strane{
+        gap: 1.3vw;
+    }
 }
