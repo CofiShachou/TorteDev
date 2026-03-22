@@ -755,8 +755,17 @@ $("#kontakt").click(()=>{
 
 let maxStrana;
 maxStrana=$(".strane>p:last-of-type").text();
+let altName;
 function strana(){
     idTorte=$(".idTorte").attr("id");
+    if(idTorte=="MS" || idTorte=="MM" || idTorte=="DM" || idTorte=="DS" || idTorte=="SM" || idTorte=="SS" ) altName="Torta"
+    if(idTorte=="KO") altName="Kolaci"
+    if(idTorte=="FM") altName="Jestive figure"
+    if(idTorte=="JS") altName="Jestive slike"
+    if(idTorte=="PT") altName="Presek torti"
+    if(idTorte=="SL") altName="Slano"
+    
+    
 
     $(".slikeWrap .slike").remove();
     $(".slikeWrap").append(`<div class="slike"></div>`)
@@ -766,7 +775,7 @@ function strana(){
     while(i<16 && ((redniBrojStrane*15)+i)<sviNizovi[idTorte]+1){
         
         $(".slike").append(`
-        <img src="resources/images/`+idTorte+`/`+idTorte+``+(redniBrojStrane*15+i)+`.webp" alt="torta" loading="lazy" class="slikaTorte" id="`+idTorte+``+(redniBrojStrane*15+i)+`">
+        <img src="resources/images/`+idTorte+`/`+idTorte+``+(redniBrojStrane*15+i)+`.webp" alt="`+altName+`" loading="lazy" class="slikaTorte" id="`+idTorte+``+(redniBrojStrane*15+i)+`">
         `)
             setTimeout(() => {
                 $(".slikeWrap .slike img").css("opacity","1");
